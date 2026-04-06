@@ -13,6 +13,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Hardware Support',
+      items: [
+        'hardware-support/overview',
+        'hardware-support/dimm',
+        'hardware-support/pmem',
+        'hardware-support/cxl',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Concepts',
       items: [
         'concepts/architecture',

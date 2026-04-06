@@ -22,6 +22,24 @@ html[data-theme='dark'] {
   backdrop-filter: blur(16px);
 }
 
+.navbar__brand {
+  gap: 0.55rem;
+}
+
+.navbar__logo {
+  height: 1.4rem;
+  width: 1.4rem;
+}
+
+.navbar__logo img {
+  height: 100%;
+  width: 100%;
+}
+
+.navbar__title {
+  letter-spacing: -0.03em;
+}
+
 .footer--dark {
   background: #101826;
 }

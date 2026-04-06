@@ -4,9 +4,9 @@ title: Overview
 slug: /
 ---
 
-# memx-lab Docs Overview
+# MemX Documentation Overview
 
-`memx-lab` is the shared documentation home for memory-related projects, experiments, tooling, and technical notes.
+`MemX Docs` is the shared documentation home for memory-related projects, experiments, tooling, and technical notes.
 
 This site serves one main job:
 

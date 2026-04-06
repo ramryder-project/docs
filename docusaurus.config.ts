@@ -2,12 +2,12 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'memx-lab docs',
-  tagline: 'Documentation hub for the memx-lab project family.',
+  title: 'MemX',
+  tagline: 'Documentation hub for the MemX project family.',
   url: 'https://memx-lab.github.io',
   baseUrl: '/docs/',
 
-  organizationName: 'memx-lab',
+  organizationName: 'MemX',
   projectName: 'docs',
   trailingSlash: false,
 
@@ -37,7 +37,13 @@ const config: Config = {
 
   themeConfig: {
     navbar: {
-      title: 'memx-lab docs',
+      title: 'MemX',
+      hideOnScroll: false,
+      logo: {
+        alt: 'MemX',
+        src: 'img/memx-logo.svg',
+        href: 'https://memx-lab.github.io/',
+      },
       items: [
         {to: '/', label: 'Docs', position: 'left'},
         {to: '/projects', label: 'Projects', position: 'left'},
@@ -73,7 +79,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} memx-lab`,
+      copyright: `Copyright © ${new Date().getFullYear()} MemX Lab`,
     },
     prism: {
       additionalLanguages: ['bash', 'toml', 'rust'],

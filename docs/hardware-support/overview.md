@@ -7,9 +7,9 @@ slug: /hardware-support
 
 `MemX` currently supports multiple memory device types:
 
-- [DIMM](./dimm)
-- [PMem](./pmem)
-- [CXL](./cxl)
+- [DIMM](/hardware-support/dimm)
+- [PMem](/hardware-support/pmem)
+- [CXL](/hardware-support/cxl)
 
 Future support is planned for:
 
@@ -30,9 +30,9 @@ PMem, and CXL expanders.
 
 Use the following guides for the corresponding hardware:
 
-- [DIMM](./dimm)
-- [PMem](./pmem)
-- [CXL](./cxl)
+- [DIMM](/hardware-support/dimm)
+- [PMem](/hardware-support/pmem)
+- [CXL](/hardware-support/cxl)
 
 ## Future work
 

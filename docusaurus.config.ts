@@ -8,7 +8,7 @@ const config: Config = {
   baseUrl: '/docs/',
 
   organizationName: 'memx-lab',
-  projectName: 'memx-docs',
+  projectName: 'docs',
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
@@ -25,7 +25,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          routeBasePath: 'docs',
+          routeBasePath: '/',
         },
         blog: false,
         theme: {
@@ -39,9 +39,9 @@ const config: Config = {
     navbar: {
       title: 'memx-lab docs',
       items: [
-        {to: '/docs/overview', label: 'Docs', position: 'left'},
-        {to: '/docs/projects', label: 'Projects', position: 'left'},
-        {to: '/docs/roadmap', label: 'Roadmap', position: 'left'},
+        {to: '/', label: 'Docs', position: 'left'},
+        {to: '/projects', label: 'Projects', position: 'left'},
+        {to: '/roadmap', label: 'Roadmap', position: 'left'},
         {
           href: 'https://github.com/memx-lab',
           label: 'GitHub',
@@ -55,15 +55,15 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            {label: 'Overview', to: '/docs/overview'},
-            {label: 'Getting Started', to: '/docs/getting-started'},
+            {label: 'Overview', to: '/'},
+            {label: 'Getting Started', to: '/getting-started'},
           ],
         },
         {
           title: 'Projects',
           items: [
-            {label: 'Project Index', to: '/docs/projects'},
-            {label: 'Architecture', to: '/docs/architecture'},
+            {label: 'Project Index', to: '/projects'},
+            {label: 'Architecture', to: '/architecture'},
           ],
         },
         {

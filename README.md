@@ -1,53 +1,99 @@
 # docs
 
-Documentation repository template for the `memx-lab` project family.
+## Files to edit most often
 
-## Role
+For everyday documentation work, you will mainly edit Markdown files under
+`docs/`.
 
-This repository is the technical documentation hub, separate from the main
-homepage repository.
+### Content pages
 
-Use it for:
+- `docs/overview.md`
+  Controls the docs homepage at `https://memx-lab.github.io/docs/`
+- `docs/getting-started/overview.md`
+  Controls the getting started overview page
+- `docs/getting-started/quickstart.md`
+  Controls the quickstart page
+- `docs/concepts/architecture.md`
+  Controls the architecture page
+- `docs/concepts/elastic-memory.md`
+  Controls the elastic memory concepts page
+- `docs/projects/index.md`
+  Controls the project index page
+- `docs/projects/memx-core.md`
+  Controls the `MemX Core` project page
+- `docs/projects/memx-bench.md`
+  Controls the `MemX Bench` project page
+- `docs/community/index.md`
+  Controls the community page
+- `docs/community/contributing.md`
+  Controls the contributing page
+- `docs/roadmap.md`
+  Controls the roadmap page
 
-- getting started guides
-- architecture docs
-- project index pages
-- roadmap and contributor docs
+### Site structure and appearance
 
-## Suggested published URL
+- `sidebars.ts`
+  Controls the left sidebar grouping and document order
+- `docusaurus.config.ts`
+  Controls the site title, navbar, footer, GitHub links, and deployment URL
+- `src/css/custom.css`
+  Controls theme colors, typography, spacing, and visual styling
 
-- `https://memx-lab.github.io/docs/`, or
-- `https://docs.memxlab.org/`
+## Local development
 
-## Important config to update
+### Node version
 
-In [docusaurus.config.ts](/home/yaz093/memx/docs/docusaurus.config.ts), update:
+This project requires:
 
-- `url`
-- `organizationName`
-- `projectName`
+- `Node.js >= 20`
 
-If you deploy docs under `/docs/` on the homepage domain, set:
+If your local machine does not have Node 20, you can use Docker for local
+preview.
 
-- `url: 'https://memx-lab.github.io'`
-- `baseUrl: '/docs/'`
-- `projectName: 'docs'`
+### Install dependencies
 
-If you deploy docs to a separate docs domain, set:
+```bash
+npm install
+```
 
-- `url: 'https://docs.memxlab.org'`
-- `baseUrl: '/'`
+### Local preview with hot reload
 
-## GitHub Pages setting
+```bash
+npm run start
+```
 
-For this repository, prefer:
+Then open:
 
-- `Settings -> Pages -> Source: GitHub Actions`
+- `http://localhost:3000/docs/`
 
-Do not use:
+### Local preview with Docker
 
-- `Deploy from a branch`
-- `main` + `/docs`
+```bash
+docker run --rm -it -p 3000:3000 -v "$PWD":/app -w /app node:20 bash
+npm install
+npm run start -- --host 0.0.0.0
+```
 
-That branch-based mode serves the repository folder directly and skips the
-Docusaurus build step.
+Then open:
+
+- `http://localhost:3000/docs/`
+
+### Production build test
+
+```bash
+npm run build
+```
+
+### Preview the production build locally
+
+```bash
+npm run serve
+```
+
+## Typical workflow
+
+1. Edit Markdown under `docs/`
+2. If needed, update `sidebars.ts`
+3. Preview locally with `npm run start` or Docker
+4. Verify production build with `npm run build`
+5. Commit and push

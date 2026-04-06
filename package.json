@@ -1,0 +1,21 @@
+{
+  "name": "memx-lab-docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GitHub homepage and documentation site for the memx organization.",
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve",
+    "deploy": "docusaurus deploy"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.7.0",
+    "@docusaurus/preset-classic": "^3.7.0",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.1.1",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

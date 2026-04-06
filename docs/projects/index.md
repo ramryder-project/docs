@@ -1,11 +1,11 @@
 ---
-sidebar_position: 3
 title: Projects
+slug: /projects
 ---
 
 # Projects
 
-Use this page as the index for every `memx`-related repository.
+Use this page as the index for every `MemX`-related repository.
 
 ## Suggested layout
 

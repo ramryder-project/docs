@@ -1,15 +1,15 @@
 ---
-sidebar_position: 2
 title: Getting Started
+slug: /getting-started
 ---
 
 # Getting Started
 
-Start this repository as your `memx` organization portal.
+Start this repository as the `MemX` documentation portal.
 
 ## Recommended flow
 
-1. Create a GitHub organization such as `memx`
+1. Create a GitHub organization such as `memx-lab`
 2. Create a public repository for the site
 3. Enable GitHub Pages deployment
 4. Add project pages as your related repositories grow

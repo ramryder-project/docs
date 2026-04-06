@@ -1,6 +1,6 @@
 ---
-sidebar_position: 5
 title: Roadmap
+slug: /roadmap
 ---
 
 # Roadmap

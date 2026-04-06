@@ -1,11 +1,11 @@
 ---
-sidebar_position: 4
 title: Architecture
+slug: /architecture
 ---
 
 # Architecture
 
-This section is where you explain how the pieces of `memx` fit together.
+This section is where you explain how the pieces of `MemX` fit together.
 
 ## Good topics for this page
 

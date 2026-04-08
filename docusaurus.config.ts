@@ -46,12 +46,10 @@ const config: Config = {
       },
       items: [
         {to: '/', label: 'Docs', position: 'left'},
-        {to: '/projects', label: 'Projects', position: 'left'},
-        {to: '/roadmap', label: 'Roadmap', position: 'left'},
         {
           href: 'https://github.com/memx-lab',
           label: 'GitHub',
-          position: 'right',
+          position: 'left',
         },
       ],
     },
@@ -62,20 +60,26 @@ const config: Config = {
           title: 'Docs',
           items: [
             {label: 'Overview', to: '/'},
-            {label: 'Getting Started', to: '/getting-started'},
+            {label: 'Hardware Support', to: '/hardware-support/overview'},
           ],
         },
         {
           title: 'Projects',
           items: [
-            {label: 'Project Index', to: '/projects'},
-            {label: 'Architecture', to: '/architecture'},
+            {label: 'RamRyder', to: '/memx-ramryder/overview'},
+            {label: 'RAMOS', to: '/memx-os/overview'},
+          ],
+        },
+        {
+          title: 'Development',
+          items: [
+            {label: 'Roadmap', to: '/roadmap'},
           ],
         },
         {
           title: 'Community',
           items: [
-            {label: 'GitHub Organization', href: 'https://github.com/memx-lab'},
+            {label: 'GitHub', href: 'https://github.com/memx-lab'},
           ],
         },
       ],

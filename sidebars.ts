@@ -5,14 +5,6 @@ const sidebars: SidebarsConfig = {
     'overview',
     {
       type: 'category',
-      label: 'Getting Started',
-      items: [
-        'getting-started/overview',
-        'getting-started/quickstart',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Hardware Support',
       items: [
         'hardware-support/overview',
@@ -23,19 +15,18 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Concepts',
+      label: 'MemX RamRyder',
       items: [
-        'concepts/architecture',
-        'concepts/elastic-memory',
+        'memx-ramryder/overview',
+        'memx-ramryder/build',
       ],
     },
     {
       type: 'category',
-      label: 'Projects',
+      label: 'MemX RAMOS',
       items: [
-        'projects/index',
-        'projects/memx-core',
-        'projects/memx-bench',
+        'memx-os/overview',
+        'memx-os/build',
       ],
     },
     {

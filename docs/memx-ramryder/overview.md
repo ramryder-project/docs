@@ -1,9 +1,8 @@
 ---
-title: Architecture
-slug: /architecture
+title: Overview
 ---
 
-# Architecture
+# Overview
 
 This section is where you explain how the pieces of `MemX` fit together.
 

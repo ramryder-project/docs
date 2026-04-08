@@ -1,6 +1,5 @@
 ---
 title: Overview
-slug: /hardware-support
 ---
 
 # Hardware Support
@@ -18,7 +17,7 @@ Future support is planned for:
 
 ## Why hardware-specific setup is needed
 
-`MemX` uses a software-defined memory model. To let software manage memory at
+Both `RamRyder` and `RAMOS` use a software-defined memory model. To let software manage memory at
 the channel level, each device type needs its own hardware-specific setup so
 that per-channel memory devices are exposed to the software layer.
 

@@ -4,6 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'MemX',
   tagline: 'Documentation hub for the MemX project family.',
+  favicon: 'img/memx-logo.svg',
   url: 'https://memx-lab.github.io',
   baseUrl: '/docs/',
 

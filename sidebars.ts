@@ -19,6 +19,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'memx-ramryder/overview',
         'memx-ramryder/build',
+        'memx-ramryder/config',
       ],
     },
     {

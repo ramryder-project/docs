@@ -40,14 +40,14 @@ For each DAX device, specify its device path under `/dev` and its capacity. Use
 different `tier_id` values for devices from different memory tiers or sockets.
 Within the same tier, assign a unique `dax_id` to each device.
 
-#### `[global]`
+### `[global]`
 
 This section defines the global configuration for the resource manager.
 
 - `segment_size_mb`: Size of one management segment, in MB.
 - `monitor_interval_second`: Monitoring interval, in seconds. The resource manager uses this interval when collecting and uploading runtime memory pressure and dynamic allocation data.
 
-#### `[devices]`
+### `[devices]`
 
 Each `dev` entry describes one software-managed DAX device:
 
@@ -56,18 +56,20 @@ Each `dev` entry describes one software-managed DAX device:
 - `tier_id`: Memory-tier identifier. Use the same value for devices in the same socket and tier, and different values for devices in different tiers or sockets.
 - `dax_id`: Device identifier within the same tier. It should be unique for each DAX device under the same `tier_id`.
 
-#### `[clouddb]`
+### `[clouddb]`
 
 These options control whether RamRyder uploads per-VM runtime memory metrics,
 such as capacity, bandwidth, and latency, to CloudDB. RamRyder currently
 supports InfluxDB as the backend. With these metrics stored in CloudDB, you can
 monitor runtime behavior in dashboards such as Grafana.
 
+In short, to enable this, you need to provide url and token of your influxdb cloud service.
+
 - `enable_clouddb`: Enables or disables CloudDB reporting.
 - `influxdb_url`: URL of the InfluxDB service.
 - `influxdb_token`: Authentication token used to write metrics to InfluxDB.
-- `use_proxy`: Enables or disables proxy access for the remote database connection.
-- `proxy_addr`: Proxy address used when `use_proxy` is enabled.
+- `use_proxy`: Enables or disables proxy access for the remote database connection (deprecated).
+- `proxy_addr`: Proxy address used when `use_proxy` is enabled (deprecated).
 
 
 ## QEMU

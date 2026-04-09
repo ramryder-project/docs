@@ -4,8 +4,8 @@ title: Quick Start
 
 # Quick Start
 
-This page describes the fastest way to fetch the source code, build
-`RamRyder`, prepare the runtime image, and launch a VM instance for basic
+This page describes the fastest path to fetch the source code, build
+`RamRyder`, prepare a runtime image, and launch a VM instance for basic
 validation.
 
 ## Get source code
@@ -22,7 +22,8 @@ git submodule update --init --recursive
 
 ## Build project
 
-Make sure all submodules are available before building. Inside `ramryder` folder, follow the instructions below.
+Make sure all submodules are available before building. From the `ramryder`
+directory, follow the steps below.
 
 ### Build resource manager
 
@@ -51,25 +52,30 @@ make -j$(nproc)
 ## Run RamRyder
 
 ### Start resource manager
-Before starting resource manager, use `elesticmm.conf` to configure memory resource on the server. Please refer to [configure guide](/memx-ramryder/config) for details.
+Before starting the resource manager, use `elesticmm.conf` to configure the
+memory resources on the server. See the [configuration guide](/memx-ramryder/config)
+for details.
 
 ```
 ./src/resource_manager
 ```
 
 ### Get VM image
-We prepared a clean VM image (Ubuntu). You could use this clean image (**[Download Link](https://drive.google.com/file/d/1DASrFSRzh7dV2UX0fINgHhx10W13yZdz/view?usp=sharing)**) or use your own image.
+We provide a clean Ubuntu VM image. You can use this image
+(**[download link](https://drive.google.com/file/d/1DASrFSRzh7dV2UX0fINgHhx10W13yZdz/view?usp=sharing)**)
+or use your own image.
 
 ```bash
 tar -xf nvcloud-image-clean.tar.xz
 ```
 Then refer to `readme.txt` inside the package for login information.
 
-### Launch the VM
-Please refer to [configure guide](/memx-ramryder/config) to customize `run-vm.sh` for your VM before launching the VM. 
+### Launch VM
+Before launching the VM, follow the [configuration guide](/memx-ramryder/config)
+to customize `run-vm.sh` for your environment.
 ```bash
 run-vm.sh
 ```
 
 ### Install kernel
-Log into VM and follow [MemX OS - build](/memx-os/build) to install kernel.
+Log in to the VM and follow [MemX OS - build](/memx-os/build) to install the kernel.

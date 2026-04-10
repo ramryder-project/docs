@@ -4,7 +4,7 @@ title: Configuration
 
 # Configuration Guide
 
-This page describes how to configure `RamRyder`, including resource manger and hypervisor (i.e., QEMU).
+This page describes how to configure `RamRyder`, including resource manager and hypervisor (i.e., QEMU).
 
 ## Resource manager
 Create the resource manager configuration file at `src/elesticmm.conf`.
@@ -63,7 +63,7 @@ such as capacity, bandwidth, and latency, to CloudDB. RamRyder currently
 supports InfluxDB as the backend. With these metrics stored in CloudDB, you can
 monitor runtime behavior in dashboards such as Grafana.
 
-In short, to enable this, you need to provide url and token of your influxdb cloud service.
+To enable this feature, provide the URL and token for your InfluxDB Cloud service.
 
 - `enable_clouddb`: Enables or disables CloudDB reporting.
 - `influxdb_url`: URL of the InfluxDB service.
@@ -141,7 +141,7 @@ sudo taskset -c $CPU_SET $QEMU_BIN \
     2>&1
 ```
 
-### Set pathes
+### Set paths
 
 - Update `VMID` to the VM ID. It should be unique if you run multiple VMs.
 ```
@@ -188,7 +188,7 @@ Index | Device Path | Size (MB) | Segment (MB) | Used Seg | Total Seg | Node ID 
 Each channel is represented by a unique `Node ID`. In this example, there are
 six memory channels in one tier.
 
-- Define all available NUMA nodes for the channels the system has.
+- Define all available NUMA nodes for all channels available on the system.
 Format: `allocate_numa_node [Node ID]`
 ```bash
 node0=$(allocate_numa_node 0)
@@ -228,9 +228,9 @@ $mem3 \
 $mem4 \
 $mem5 \
 ```
-- Update the QEMU node parameters with all available nodes and the allocated
-memory objects if it has. Keep all nodes the system has here,. If no memory object is
-allocated on a node, remove only `memdev` for that node. `cpus` should stay on
+- Update the QEMU node parameters with all available nodes and their allocated memory objects. 
+
+Note that keep all nodes available on the system in the command line. If no memory object is allocated on a node, remove only `memdev` for that node. `cpus` should stay on
 the first node.
 ```bash
 $node0,memdev=mem0,cpus=0-19 \
@@ -266,4 +266,4 @@ developers. Contributions that simplify this workflow with higher-level tools,
 such as a dedicated CLI, are welcome.
 
 You may also need to update other standard QEMU parameters, for example:
-- -net user,hostfwd=tcp::2806-:22
+- `-net user,hostfwd=tcp::2806-:22`

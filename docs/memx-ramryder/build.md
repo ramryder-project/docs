@@ -111,8 +111,7 @@ tar -xf nvcloud-image-clean.tar.xz
 Then refer to `readme.txt` inside the package for login information.
 
 ### Launch VM
-Before launching the VM, follow the [configuration guide](/memx-ramryder/config)
-to customize `run-vm.sh` for your environment.
+Before launching the VM, follow the [configuration guide](/memx-ramryder/config) to customize `run-vm.sh` for your environment and then launch VM.
 
 ```bash
 run-vm.sh

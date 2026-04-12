@@ -59,7 +59,7 @@ sudo make INSTALL_MOD_STRIP=1 modules_install
 sudo make install
 ```
 
-Then reboot the VM and boot the new kernel entry with `vnuma` in its name.
+Then reboot the VM and select new kernel `Linux 6.3.0-vnuma-0.0+`.
 
 Note that `INSTALL_MOD_STRIP=1` removes debug symbols from kernel modules. This reduces
 build time and saves storage space, but you may want to keep debug symbols if

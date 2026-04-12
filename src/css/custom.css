@@ -11,6 +11,7 @@
   --ifm-heading-font-family: "Avenir Next", "Segoe UI", sans-serif;
   --ifm-code-font-size: 95%;
   --ifm-navbar-background-color: rgba(255, 253, 248, 0.92);
+  --ifm-navbar-sidebar-width: min(70vw, 22rem);
 }
 
 html[data-theme='dark'] {

@@ -17,6 +17,7 @@
 html[data-theme='dark'] {
   --ifm-color-primary: #f6bd60;
   --ifm-background-color: #0f172a;
+  --ifm-navbar-background-color: rgba(15, 23, 42, 0.9);
 }
 
 .navbar {

@@ -113,3 +113,20 @@ html[data-theme='dark'] .footer.footer--dark .footer__link-item:hover {
 .footer.footer--dark .footer__copyright {
   text-align: center;
 }
+
+@media (min-width: 997px) {
+  .table-of-contents {
+    position: relative;
+    padding-top: 2rem;
+  }
+
+  .table-of-contents::before {
+    content: "On this page";
+    position: absolute;
+    top: 0;
+    left: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ifm-color-emphasis-700);
+  }
+}

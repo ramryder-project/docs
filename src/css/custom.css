@@ -19,7 +19,19 @@ html[data-theme='dark'] {
 }
 
 .navbar {
+  background-color: transparent;
+  isolation: isolate;
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--ifm-navbar-background-color);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .navbar__brand {

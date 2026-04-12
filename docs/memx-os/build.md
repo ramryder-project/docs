@@ -7,13 +7,22 @@ title: Quick Start
 This page describes a simple workflow to prepare dependencies, configure the
 MemX-OS kernel, build it, and install it inside the guest image.
 
-## Prepare
-
-Install the required build dependencies first:
+## Get source code
 
 ```bash
-apt-get update
-apt-get install build-essential libncurses5 libncurses5-dev bin86 kernel-package libssl-dev bison flex libelf-dev dwarves
+git clone git@github.com:memx-lab/ramos.git
+cd ramos
+```
+
+## Prepare
+
+Install the required build dependencies first.
+
+Run all remaining commands in the kernel source tree:
+
+```bash
+sudo apt-get update
+sudo apt-get install build-essential libncurses5 libncurses5-dev bin86 kernel-package libssl-dev bison flex libelf-dev dwarves
 ```
 
 ## Configure kernel
@@ -31,10 +40,13 @@ Then open the configuration menu:
 make menuconfig
 ```
 
-In `make menuconfig`, enable the following MemX OS options:
+In `make menuconfig`, enable the following MemX OS options under `General setup`:  
+- `NVSL Virtual NUMA Support`
+- `NVSL debug mode` (optional, for more verbose log output)
 
-- `NVSL_VNUMA`
-- `NVSL_DEBUG` (optional, for more verbose log output)
+Reference example:
+
+![MemX OS kernel menuconfig example](/img/memx-os/kernel-config.png)
 
 ## Build and install
 
@@ -55,7 +67,9 @@ you plan to use `gdb`.
 
 ## Boot updates
 
-These steps are optional because `make install` already handles the required boot updates in most cases. The commands below are kept here for reference in case the new kernel does not appear after reboot.`
+These steps are optional because `make install` already handles the required
+boot updates in most cases. The commands below are kept here for reference in
+case the new kernel does not appear after reboot.
 
 ```bash
 update-initramfs -c -k [kernel version full name]

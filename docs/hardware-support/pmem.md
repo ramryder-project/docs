@@ -25,10 +25,48 @@ managed by software rather than by the default hardware interleaving policy.
 
 ## Inspect the current topology
 
-Run these commands first and save the output:
+Install system tools:
+```bash
+sudo apt install ipmctl
+```
 
+Check current hardware topology:
 ```bash
 sudo ipmctl show -topology
+ DimmID | MemoryType                  | Capacity    | PhysicalID| DeviceLocator
+================================================================================
+ 0x0001 | Logical Non-Volatile Device | 126.375 GiB | 0x0026    | CPU1_DIMM_A2
+ 0x0011 | Logical Non-Volatile Device | 126.375 GiB | 0x0028    | CPU1_DIMM_B2
+ 0x0021 | Logical Non-Volatile Device | 126.375 GiB | 0x002a    | CPU1_DIMM_C2
+ 0x0101 | Logical Non-Volatile Device | 126.375 GiB | 0x002c    | CPU1_DIMM_D2
+ 0x0111 | Logical Non-Volatile Device | 126.375 GiB | 0x002e    | CPU1_DIMM_E2
+ 0x0121 | Logical Non-Volatile Device | 126.375 GiB | 0x0030    | CPU1_DIMM_F2
+ 0x1001 | Logical Non-Volatile Device | 126.375 GiB | 0x0032    | CPU2_DIMM_A2
+ 0x1011 | Logical Non-Volatile Device | 126.375 GiB | 0x0034    | CPU2_DIMM_B2
+ 0x1021 | Logical Non-Volatile Device | 126.375 GiB | 0x0036    | CPU2_DIMM_C2
+ 0x1101 | Logical Non-Volatile Device | 126.375 GiB | 0x0038    | CPU2_DIMM_D2
+ 0x1111 | Logical Non-Volatile Device | 126.375 GiB | 0x003a    | CPU2_DIMM_E2
+ 0x1121 | Logical Non-Volatile Device | 126.375 GiB | 0x003c    | CPU2_DIMM_F2
+ N/A    | DDR4                        | 16.000 GiB  | 0x0025    | CPU1_DIMM_A1
+ N/A    | DDR4                        | 16.000 GiB  | 0x0027    | CPU1_DIMM_B1
+ N/A    | DDR4                        | 16.000 GiB  | 0x0029    | CPU1_DIMM_C1
+ N/A    | DDR4                        | 16.000 GiB  | 0x002b    | CPU1_DIMM_D1
+ N/A    | DDR4                        | 16.000 GiB  | 0x002d    | CPU1_DIMM_E1
+ N/A    | DDR4                        | 16.000 GiB  | 0x002f    | CPU1_DIMM_F1
+ N/A    | DDR4                        | 16.000 GiB  | 0x0031    | CPU2_DIMM_A1
+ N/A    | DDR4                        | 16.000 GiB  | 0x0033    | CPU2_DIMM_B1
+ N/A    | DDR4                        | 16.000 GiB  | 0x0035    | CPU2_DIMM_C1
+ N/A    | DDR4                        | 16.000 GiB  | 0x0037    | CPU2_DIMM_D1
+ N/A    | DDR4                        | 16.000 GiB  | 0x0039    | CPU2_DIMM_E1
+ N/A    | DDR4                        | 16.000 GiB  | 0x003b    | CPU2_DIMM_F1
+```
+In this example, the server has two CPU sockets (`CPU1` and `CPU2`), and each
+socket has six memory channels (`A` through `F`). In each channel, one
+slot (e.g., `CPU1_DIMM_A1`) is populated with a DDR4 DIMM, and the
+other slot (e.g., `CPU1_DIMM_A2`) is populated with a PMem device.
+
+Check current PMem configuration in the system:
+```bash
 sudo ipmctl show -region
 sudo ipmctl show -goal
 sudo ipmctl show -memoryresources
@@ -46,8 +84,12 @@ existing PMem data.
 
 ## Reconfigure PMem
 
-Disable and destroy the current namespace:
+Check current namespaces and regions:
+```bash
+ndctl list -RNu
+```
 
+Disable and destroy the target namespace:
 ```bash
 sudo ndctl disable-namespace namespace0.0
 sudo ndctl destroy-namespace namespace0.0
@@ -84,7 +126,7 @@ After reboot, check whether the PMem configuration has been split into
 independent regions or DIMM-level regions as expected:
 
 ```bash
-ndctl list -RDu
+ndctl list -RNu
 ```
 
 ## Create namespaces per region
@@ -94,6 +136,8 @@ Create a namespace for each region. For example:
 ```bash
 sudo ndctl create-namespace --region=region0 --mode=devdax
 sudo ndctl create-namespace --region=region1 --mode=devdax
+sudo ndctl create-namespace --region=region2 --mode=devdax
+...
 ```
 
 Repeat the same pattern for the remaining regions.

@@ -93,15 +93,25 @@ html[data-theme='dark'] .footer.footer--dark .footer__link-item:hover {
   text-align: center;
 }
 
+.footer.footer--dark .footer__links {
+  max-width: 72rem;
+  margin: 0 auto 1.5rem;
+}
+
 .footer.footer--dark .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   justify-content: center;
 }
 
 .footer.footer--dark .footer__col {
+  flex: 0 1 12rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-bottom: 0;
 }
 
 .footer.footer--dark .footer__items {

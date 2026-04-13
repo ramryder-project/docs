@@ -5,7 +5,7 @@ title: Quick Start
 # Quick Start
 
 This page describes a simple workflow to prepare dependencies, configure the
-MemX-OS kernel, build it, and install it inside the guest image.
+MemX RAMOS kernel, build it, and install it inside the guest image.
 
 ## Get source code
 
@@ -40,13 +40,13 @@ Then open the configuration menu:
 make menuconfig
 ```
 
-In `make menuconfig`, enable the following MemX OS options under `General setup`:  
-- `NVSL Virtual NUMA Support`
-- `NVSL debug mode` (optional, for more verbose log output)
+In `make menuconfig`, enable the following RAMOS options under `General setup`:  
+- `RAMOS NUMA abstraction support`
+- `RAMOS debug mode` (optional, for more verbose log output)
 
 Reference example:
 
-![MemX OS kernel menuconfig example](/img/memx-os/kernel-config.png)
+![MemX RAMOS kernel menuconfig example](/img/memx-os/kernel-config.png)
 
 ## Build and install
 

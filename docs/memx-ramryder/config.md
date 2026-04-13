@@ -256,7 +256,7 @@ $node5 \
 ```
 
 At this point, `run-vm.sh` should be ready. Launch the VM and install the
-kernel if this is your first image. Refer to [MemX OS - build](/memx-os/build)
+kernel if this is your first image. Refer to [MemX RAMOS - build](/memx-os/build)
 for kernel build instructions. After the kernel is installed in the image, you
 can copy that image for other VMs without repeating the installation.
 

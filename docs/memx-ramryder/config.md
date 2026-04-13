@@ -11,7 +11,7 @@ Create the resource manager configuration file at `src/elesticmm.conf`.
 You can customize it based on the example below. RamRyder also provides the
 same example in `src/elasticmm_default.conf`.
 
-```
+```bash
 [global]
 # size in MB
 segment_size_mb 128

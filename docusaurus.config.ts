@@ -68,7 +68,7 @@ const config: Config = {
           title: 'Projects',
           items: [
             {label: 'RamRyder', to: '/memx-ramryder/overview'},
-            {label: 'RAMOS', to: '/memx-os/overview'},
+            {label: 'RAMOS', to: '/memx-ramos/overview'},
           ],
         },
         {

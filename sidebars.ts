@@ -26,8 +26,8 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'MemX RAMOS',
       items: [
-        'memx-os/overview',
-        'memx-os/build',
+        'memx-ramos/overview',
+        'memx-ramos/build',
       ],
     },
     {

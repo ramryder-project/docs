@@ -46,7 +46,7 @@ In `make menuconfig`, enable the following RAMOS options under `General setup`:
 
 Reference example:
 
-![MemX RAMOS kernel menuconfig example](/img/memx-os/kernel-config.png)
+![MemX RAMOS kernel menuconfig example](/img/memx-ramos/kernel-config.png)
 
 ## Build and install
 

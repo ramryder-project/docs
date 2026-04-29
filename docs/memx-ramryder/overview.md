@@ -10,5 +10,5 @@ machine based on application demands.
 
 The main components of RamRyder include a user-space resource manager, a
 hypervisor extended from QEMU, and a guest Linux kernel
-([MemX RAMOS](/memx-os/overview)). To get started, follow the
+([MemX RAMOS](/memx-ramos/overview)). To get started, follow the
 [Quick Start](/memx-ramryder/build).

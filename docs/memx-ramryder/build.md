@@ -118,4 +118,4 @@ run-vm.sh
 ```
 
 ### Install kernel
-Log in to the VM and follow [MemX RAMOS - build](/memx-os/build) to install the kernel.
+Log in to the VM and follow [MemX RAMOS - build](/memx-ramos/build) to install the kernel.

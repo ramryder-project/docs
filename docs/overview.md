@@ -14,7 +14,7 @@ challenges.
 
 ## Current active projects
 - **[MemX RamRyder](/memx-ramryder/overview)**: software-defined memory for cloud virtual machines.
-- **[MemX RAMOS](/memx-os/overview)**: operating system for software-defined memory.
+- **[MemX RAMOS](/memx-ramos/overview)**: operating system for software-defined memory.
 
 ## Related research papers
 - [**[OSDI'26]** Break on Through to the Other Side: Pooling Memory Elastically with RamRyder](https://www.usenix.org/conference/osdi26/presentation/zhou-yanbo)

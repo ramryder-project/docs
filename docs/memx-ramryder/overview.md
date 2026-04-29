@@ -4,15 +4,12 @@ title: Overview
 
 # Overview
 
-This section is where you explain how the pieces of `MemX` fit together.
+RamRyder is a software-defined elastic memory system for cloud virtual
+machines. Its core idea is to manage and allocate memory channels in software,
+allowing users to define the memory capacity and bandwidth of each virtual
+machine based on application demands.
 
-## Good topics for this page
-
-- Core abstractions
-- Data flow
-- Memory model
-- Storage model
-- Performance goals
-- How repositories relate to each other
-
-Keep diagrams and cross-project concepts here, especially if they are broader than a single repo.
+The main components of RamRyder include a user-space resource manager, a
+hypervisor extended from QEMU, and a guest Linux kernel
+([MemX RAMOS](/memx-os/overview)). To get started, follow the
+[Quick Start](/memx-ramryder/build).

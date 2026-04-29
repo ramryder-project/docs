@@ -37,7 +37,6 @@ const sidebars: SidebarsConfig = {
         'community/overview',
       ],
     },
-    'roadmap',
   ],
 };
 

@@ -101,12 +101,12 @@ html[data-theme='dark'] .footer.footer--dark .footer__link-item:hover {
 .footer.footer--dark .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 4rem;
   justify-content: center;
 }
 
 .footer.footer--dark .footer__col {
-  flex: 0 1 12rem;
+  flex: 0 1 15rem;
   display: flex;
   flex-direction: column;
   align-items: center;

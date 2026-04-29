@@ -34,8 +34,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Community',
       items: [
-        'community/index',
-        'community/contributing',
+        'community/overview',
       ],
     },
     'roadmap',

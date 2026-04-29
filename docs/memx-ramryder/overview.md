@@ -2,8 +2,7 @@
 title: Overview
 ---
 
-# Overview
-
+# MemX RamRyder
 RamRyder is a software-defined elastic memory system for cloud virtual
 machines. Its core idea is to manage and allocate memory channels in software,
 allowing users to define the memory capacity and bandwidth of each virtual

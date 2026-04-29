@@ -2,7 +2,7 @@
 title: Overview
 ---
 
-# Overview
+# Memx OS
 MemX OS is a Linux-based kernel extension that supports software-defined
 memory in both guest virtual machines and host servers. It introduces a new
 memory-channel abstraction to enable fine-grained page-to-channel allocation.

@@ -5,7 +5,7 @@ title: DIMM
 # DIMM
 
 This page will describe how to expose DIMM-backed memory resources to the
-software layer so that `MemX` can manage them at the channel level.
+software layer so that MemX can manage them at the channel level.
 
 ## Scope
 

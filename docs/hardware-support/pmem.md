@@ -4,9 +4,9 @@ title: PMem
 
 # PMem
 
-This page documents a PMem configuration workflow for `RamRyder`.
+This page documents a PMem configuration workflow for RamRyder.
 
-`RamRyder` uses a software-defined memory model. To let software manage memory
+RamRyder uses a software-defined memory model. To let software manage memory
 at the memory-channel level, the PMem devices under each channel need to be
 exposed to the host as separate devices instead of staying hidden behind the
 default interleaved AppDirect layout.
@@ -18,7 +18,7 @@ The target setup is:
 - remove the current interleaved AppDirect goal
 - switch PMem to `AppDirectNotInterleaved`
 - expose PMem more directly at the channel or region level
-- let `RamRyder` take over device management and later allocation in software
+- let RamRyder take over device management and later allocation in software
 
 This setup is intended for systems where memory placement and allocation are
 managed by software rather than by the default hardware interleaving policy.

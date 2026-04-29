@@ -72,12 +72,6 @@ const config: Config = {
           ],
         },
         {
-          title: 'Development',
-          items: [
-            {label: 'Roadmap', to: '/roadmap'},
-          ],
-        },
-        {
           title: 'Community',
           items: [
             {label: 'GitHub', href: 'https://github.com/memx-lab'},

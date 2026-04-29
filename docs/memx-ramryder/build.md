@@ -5,7 +5,7 @@ title: Quick Start
 # Quick Start
 
 This page describes the fastest path to fetch the source code, build
-`RamRyder`, prepare a runtime image, and launch a VM instance for basic
+RamRyder, prepare a runtime image, and launch a VM instance for basic
 validation.
 
 ## Get source code
@@ -22,7 +22,7 @@ git submodule update --init --recursive
 
 ## Build project
 
-Make sure all submodules are available before building. From the `ramryder`
+Make sure all submodules are available before building. From the RamRyder
 directory, follow the steps below.
 
 ### Build resource manager

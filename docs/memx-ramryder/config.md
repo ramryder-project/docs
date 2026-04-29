@@ -4,7 +4,7 @@ title: Configuration
 
 # Configuration Guide
 
-This page describes how to configure `RamRyder`, including resource manager and hypervisor (i.e., QEMU).
+This page describes how to configure RamRyder, including resource manager and hypervisor (i.e., QEMU).
 
 ## Resource manager
 Create the resource manager configuration file at `src/elesticmm.conf`.

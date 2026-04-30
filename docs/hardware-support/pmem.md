@@ -5,11 +5,7 @@ title: PMem
 # PMem
 
 This page documents a PMem configuration workflow for RamRyder.
-
-RamRyder uses a software-defined memory model. To let software manage memory
-at the memory-channel level, the PMem devices under each channel need to be
-exposed to the host as separate devices instead of staying hidden behind the
-default interleaved AppDirect layout.
+To let software manage memory at the memory-channel level, the PMem devices under each channel need to be exposed to the host as separate devices instead of staying hidden behind the default interleaved AppDirect layout.
 
 ## Goal
 
@@ -23,14 +19,14 @@ The target setup is:
 This setup is intended for systems where memory placement and allocation are
 managed by software rather than by the default hardware interleaving policy.
 
-## Inspect the current topology
+## Inspect the hardware topology
 
 Install system tools:
 ```bash
 sudo apt install ipmctl
 ```
 
-Check current hardware topology:
+Check hardware topology:
 ```bash
 sudo ipmctl show -topology
  DimmID | MemoryType                  | Capacity    | PhysicalID| DeviceLocator
@@ -123,7 +119,7 @@ sudo reboot
 ## Verify the new layout
 
 After reboot, check whether the PMem configuration has been split into
-independent regions or DIMM-level regions as expected:
+independent regions as expected:
 
 ```bash
 ndctl list -RNu

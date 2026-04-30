@@ -35,18 +35,18 @@ sudo dmidecode -t 17
 sudo ipmctl show -topology
  DimmID | MemoryType                  | Capacity    | PhysicalID| DeviceLocator
 ================================================================================
- N/A    | DDR5                        | 32.000 GiB  | 0x0025    | CPU1_DIMM_A1
- N/A    | DDR5                        | 32.000 GiB  | 0x0027    | CPU1_DIMM_B1
- N/A    | DDR5                        | 32.000 GiB  | 0x0029    | CPU1_DIMM_C1
- N/A    | DDR5                        | 32.000 GiB  | 0x002b    | CPU1_DIMM_D1
- N/A    | DDR5                        | 32.000 GiB  | 0x002d    | CPU1_DIMM_E1
- N/A    | DDR5                        | 32.000 GiB  | 0x002f    | CPU1_DIMM_F1
- N/A    | DDR5                        | 32.000 GiB  | 0x0031    | CPU1_DIMM_G1
- N/A    | DDR5                        | 32.000 GiB  | 0x0033    | CPU1_DIMM_H1
- N/A    | DDR5                        | 32.000 GiB  | 0x0035    | CPU1_DIMM_I1
- N/A    | DDR5                        | 32.000 GiB  | 0x0037    | CPU1_DIMM_J1
- N/A    | DDR5                        | 32.000 GiB  | 0x0039    | CPU1_DIMM_K1
- N/A    | DDR5                        | 32.000 GiB  | 0x003b    | CPU1_DIMM_L1
+ N/A    | DDR5                        | 16.000 GiB  | 0x0025    | CPU1_DIMM_A1
+ N/A    | DDR5                        | 16.000 GiB  | 0x0027    | CPU1_DIMM_B1
+ N/A    | DDR5                        | 16.000 GiB  | 0x0029    | CPU1_DIMM_C1
+ N/A    | DDR5                        | 16.000 GiB  | 0x002b    | CPU1_DIMM_D1
+ N/A    | DDR5                        | 16.000 GiB  | 0x002d    | CPU1_DIMM_E1
+ N/A    | DDR5                        | 16.000 GiB  | 0x002f    | CPU1_DIMM_F1
+ N/A    | DDR5                        | 16.000 GiB  | 0x0031    | CPU1_DIMM_G1
+ N/A    | DDR5                        | 16.000 GiB  | 0x0033    | CPU1_DIMM_H1
+ N/A    | DDR5                        | 16.000 GiB  | 0x0035    | CPU1_DIMM_I1
+ N/A    | DDR5                        | 16.000 GiB  | 0x0037    | CPU1_DIMM_J1
+ N/A    | DDR5                        | 16.000 GiB  | 0x0039    | CPU1_DIMM_K1
+ N/A    | DDR5                        | 16.000 GiB  | 0x003b    | CPU1_DIMM_L1
 ```
 
 In this example, the server has a single socket (`CPU1`) with 12 memory
@@ -85,7 +85,38 @@ OS layouts may differ.**
 
 ```bash
 # in the RamRyder repository
-./scripts/check_channel_boundary.sh
+./scripts/check_channel_boundary.sh <os_headroom_gb>
+```
+
+The `os_headroom_gb` parameter specifies how much memory to keep for the host
+OS in the first DIMM. The script then suggests:
+
+- a partial `memmap` reservation for the first DIMM:
+  reserve size = first DIMM size - `os_headroom_gb`
+- whole-DIMM `memmap` reservations for the remaining channels
+
+If `os_headroom_gb` is smaller than `5`, the script prints a warning and
+recommends keeping at least `5 GB` for the OS.
+
+Example:
+
+```bash
+bash scripts/check_channel_boundary.sh 5
+Detected DRAM channels
+  populated channels : 12
+  total DRAM         : 192.00 GB
+  hole               : 1.00 GB (0x40000000)
+  boundary anchor    : 193.00 GB
+  first DIMM for OS  : 5 GB
+
+Channel    Locator                DIMM         Boundary     Start        End          Suggested Memmap
+CPU1_A     CPU1_DIMM_A1           16.00G       17.00G       -            17.00G       memmap=11G!6G
+CPU1_B     CPU1_DIMM_B1           16.00G       33.00G       17.00G       33.00G       memmap=16G!17G
+CPU1_C     CPU1_DIMM_C1           16.00G       49.00G       33.00G       49.00G       memmap=16G!33G
+CPU1_D     CPU1_DIMM_D1           16.00G       65.00G       49.00G       65.00G       memmap=16G!49G
+CPU1_E     CPU1_DIMM_E1           16.00G       81.00G       65.00G       81.00G       memmap=16G!65G
+CPU1_F     CPU1_DIMM_F1           16.00G       97.00G       81.00G       97.00G       memmap=16G!81G
+...
 ```
 
 ### 2. Reserve memory regions from the kernel
@@ -93,7 +124,7 @@ OS layouts may differ.**
 Reserve memory with `memmap` based on the channel boundaries.
 ```bash
 sudo vi /etc/default/grub
-GRUB_CMDLINE_LINUX="memmap=32G!34G memmap=32G!66G ..."
+GRUB_CMDLINE_LINUX="memmap=11G!6G memmap=16G!17G memmap=16G!33G ..."
 ```
 
 Update GRUB so the new kernel command line takes effect:

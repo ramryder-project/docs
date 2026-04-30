@@ -3,8 +3,10 @@ title: Overview
 ---
 
 # RAMOS
-RAMOS is a Linux-based kernel that supports software-defined
-memory in both guest virtual machines and host servers. It introduces memory-channel abstractions and page-to-channel allocaiton policy to enable fine-grained page-to-channel management.
+RAMOS is a Linux-based kernel for software-defined memory in both guest
+virtual machines and host servers. It introduces memory-channel abstractions
+and page-to-channel allocation policies to enable fine-grained memory
+management.
 
 Currently, [RamRyder](/memx-ramryder/overview) uses the RAMOS kernel in
 guest virtual machines. The host version is under development and will be

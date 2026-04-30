@@ -7,10 +7,10 @@ slug: /
 # MemX Overview
 
 MemX is an open-source research platform for next-generation
-software-defined memory in the cloud. Our vision is to build
+software-defined memory in the cloud. Our goal is to build
 high-performance and resource-efficient memory systems for cloud computing
-across multiple scenarios, helping address the memory wall and future storage
-challenges.
+across a range of scenarios, helping address both the memory wall
+and future memory challenges.
 
 ## Current active projects
 - **[MemX RamRyder](/memx-ramryder/overview)**: software-defined memory for cloud virtual machines.

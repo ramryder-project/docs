@@ -83,7 +83,7 @@ Query Commands:
   get-node-info nid=<node_id>                                  Show details for a C-NUMA node.
 
 Memory Management Commands:
-  alloc-mem tid=<tid> did=<dev_id> vid=<vm_id> size=<mb>       Allocate memory for a VM.
+  alloc-mem nid=<node_id> vid=<vm_id> size=<mb>                Allocate memory for a VM.
   free-mem vid=<vm_id> memid=<memdev_id>                       Release an allocated memory device.
   attach-mem memid=<memory_id> vid=<vm_id> nid=<node_id>       Attach memory to a VM on a NUMA node.
   detach-mem memid=<memory_id> vid=<vm_id>                     Detach memory from a VM.
@@ -95,8 +95,9 @@ VM Lifecycle Commands:
   stop-vm vid=<vm_id>                                          Mark a VM as stopped.
 
 Examples:
+  ./resource_client get-mem-pool
   ./resource_client get-mem-info vid=3
-  ./resource_client alloc-mem tid=1 did=0 vid=3 size=1024
+  ./resource_client alloc-mem nid=1 vid=3 size=1024
   ./resource_client create-vm vid=3 coreset=[20-30,50-60]
 ```
 

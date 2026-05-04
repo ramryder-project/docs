@@ -96,12 +96,12 @@ CPU_SET="0-9,20-29"
 
 # must create VM instance before allocating
 create_vm_instance $VMID $CPU_SET
-mem0=$(allocate_memory_object 0 0 $VMID 25600)
-mem1=$(allocate_memory_object 0 1 $VMID 25600)
-mem2=$(allocate_memory_object 0 2 $VMID 25600)
-mem3=$(allocate_memory_object 0 3 $VMID 25600)
-mem4=$(allocate_memory_object 0 4 $VMID 25600)
-mem5=$(allocate_memory_object 0 5 $VMID 25600)
+mem0=$(allocate_memory_object 0 $VMID 25600)
+mem1=$(allocate_memory_object 1 $VMID 25600)
+mem2=$(allocate_memory_object 2 $VMID 25600)
+mem3=$(allocate_memory_object 3 $VMID 25600)
+mem4=$(allocate_memory_object 4 $VMID 25600)
+mem5=$(allocate_memory_object 5 $VMID 25600)
 node0=$(allocate_numa_node 0)
 node1=$(allocate_numa_node 1)
 node2=$(allocate_numa_node 2)
@@ -188,7 +188,7 @@ Index | Device Path | Size (MB) | Segment (MB) | Used Seg | Total Seg | Node ID 
 Each channel is represented by a unique `Node ID`. In this example, there are
 six memory channels in one tier.
 
-- Define all available NUMA nodes for all channels available on the system.
+- Define all available NUMA nodes for all channels available on the system for your VM.
 Format: `allocate_numa_node [Node ID]`
 ```bash
 node0=$(allocate_numa_node 0)
@@ -201,14 +201,14 @@ node5=$(allocate_numa_node 5)
 
 - Configure memory-object allocation from the selected channels.
 
-Format: `allocate_memory_object [Tier ID] [Dax ID] [VM ID] [Size in MB]`
+Format: `allocate_memory_object [Node ID] [VM ID] [Size in MB]`
 ```bash
-mem0=$(allocate_memory_object 0 0 $VMID 25600)
-mem1=$(allocate_memory_object 0 1 $VMID 25600)
-mem2=$(allocate_memory_object 0 2 $VMID 25600)
-mem3=$(allocate_memory_object 0 3 $VMID 25600)
-mem4=$(allocate_memory_object 0 4 $VMID 25600)
-mem5=$(allocate_memory_object 0 5 $VMID 25600)
+mem0=$(allocate_memory_object 0 $VMID 25600)
+mem1=$(allocate_memory_object 1 $VMID 25600)
+mem2=$(allocate_memory_object 2 $VMID 25600)
+mem3=$(allocate_memory_object 3 $VMID 25600)
+mem4=$(allocate_memory_object 4 $VMID 25600)
+mem5=$(allocate_memory_object 5 $VMID 25600)
 ```
 
 In this example, 25 GB is allocated from each channel, for a total of 150 GB.
@@ -230,8 +230,7 @@ $mem5 \
 ```
 - Update the QEMU node parameters with all available nodes and their allocated memory objects. 
 
-Note that keep all nodes available on the system in the command line. If no memory object is allocated on a node, remove only `memdev` for that node. `cpus` should stay on
-the first node.
+Note that keep all nodes available on the system in the command line. If no memory object is allocated on a node, remove only `memdev` for that node. `cpus` should stay on the first node.
 ```bash
 $node0,memdev=mem0,cpus=0-19 \
 $node1,memdev=mem1 \
@@ -240,8 +239,8 @@ $node3,memdev=mem3 \
 $node4,memdev=mem4 \
 $node5,memdev=mem5 \
 ```
-Because this example allocates memory objects from all channels, every node has
-`memdev=memX`.
+Note that memory device ID must follow **memX** format. 
+Because this example allocates memory objects from all channels, every node has `memdev=memX`.
 
 If you allocate memory only from Node 0 and Node 1 with
 `allocate_memory_object`, remove `memdev` from the other nodes, as shown below.

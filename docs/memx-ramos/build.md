@@ -1,8 +1,8 @@
 ---
-title: Quick Start
+title: Get Started
 ---
 
-# Quick Start
+# Get Started
 
 This page describes a simple workflow to prepare dependencies, configure the
 MemX RAMOS kernel, build it, and install it inside the guest image.

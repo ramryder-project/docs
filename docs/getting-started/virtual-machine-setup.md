@@ -8,9 +8,12 @@ This page describes how to build QEMU, prepare VM images, and manage VM
 lifecycle with `ramryder_cli`.
 
 ## Build QEMU
+If you already cloned the RamRyder repository without `--recurse-submodules`, run following command to get QEMU submodule:
+```bash
+git submodule update --init --recursive
+```
 
 From the RamRyder directory:
-
 ```bash
 cd qemu
 mkdir -p build

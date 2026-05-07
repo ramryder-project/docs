@@ -13,12 +13,6 @@ components, configure memory devices, and start the resource manager.
 git clone --recurse-submodules git@github.com:ramryder-project/ramryder.git
 ```
 
-If you already cloned the repository without `--recurse-submodules`, run:
-
-```bash
-git submodule update --init --recursive
-```
-
 ## Build Resource Manager
 
 From the RamRyder directory:

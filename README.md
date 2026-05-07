@@ -17,8 +17,6 @@ For everyday documentation work, you will mainly edit Markdown files under
   Controls the kernel install guide
 - `docs/getting-started/overview.md`
   Controls the Getting Started overview and setup order
-- `docs/ramos/overview.md`
-  Controls RAMOS kernel background details
 - `docs/community/overview.md`
   Controls the community page
 

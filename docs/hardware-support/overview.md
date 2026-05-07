@@ -4,7 +4,7 @@ title: Overview
 
 # Hardware Support
 
-MemX currently supports multiple memory device types, including DIMM, PMem,
+RamRyder currently supports multiple memory device types, including DIMM, PMem,
 and CXL memory devices. We also plan to support CXL pool memory and HBM in the
 future.
 

@@ -15,18 +15,18 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'MemX RamRyder',
+      label: 'RamRyder',
       items: [
-        'memx-ramryder/overview',
-        'memx-ramryder/build',
+        'ramryder/overview',
+        'ramryder/build',
       ],
     },
     {
       type: 'category',
-      label: 'MemX RAMOS',
+      label: 'RAMOS',
       items: [
-        'memx-ramos/overview',
-        'memx-ramos/build',
+        'ramos/overview',
+        'ramos/build',
       ],
     },
     {

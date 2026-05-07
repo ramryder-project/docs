@@ -1,8 +1,8 @@
 {
-  "name": "memx-lab-docs",
+  "name": "ramryder-project-docs",
   "version": "0.1.0",
   "private": true,
-  "description": "GitHub homepage and documentation site for the memx organization.",
+  "description": "GitHub homepage and documentation site for the ramryder-project organization.",
   "scripts": {
     "start": "docusaurus start",
     "build": "docusaurus build",

@@ -8,25 +8,17 @@ For everyday documentation work, you will mainly edit Markdown files under
 ### Content pages
 
 - `docs/overview.md`
-  Controls the docs homepage at `https://memx-lab.github.io/docs/`
-- `docs/getting-started/overview.md`
-  Controls the getting started overview page
-- `docs/getting-started/quickstart.md`
-  Controls the quickstart page
-- `docs/concepts/architecture.md`
-  Controls the architecture page
-- `docs/concepts/elastic-memory.md`
-  Controls the elastic memory concepts page
-- `docs/projects/index.md`
-  Controls the project index page
-- `docs/projects/memx-core.md`
-  Controls the `MemX Core` project page
-- `docs/projects/memx-bench.md`
-  Controls the `MemX Bench` project page
-- `docs/community/index.md`
+  Controls the docs homepage at `https://ramryder-project.github.io/docs/`
+- `docs/ramryder/overview.md`
+  Controls the `RamRyder` project overview page
+- `docs/ramryder/build.md`
+  Controls the `RamRyder` build/setup guide
+- `docs/ramos/overview.md`
+  Controls the `RAMOS` project overview page
+- `docs/ramos/build.md`
+  Controls the `RAMOS` build/setup guide
+- `docs/community/overview.md`
   Controls the community page
-- `docs/community/contributing.md`
-  Controls the contributing page
 - `docs/roadmap.md`
   Controls the roadmap page
 

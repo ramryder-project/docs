@@ -10,7 +10,7 @@ manage VMs with `ramryder_cli`.
 ## Get source code
 
 ```bash
-git clone --recurse-submodules git@github.com:memx-lab/ramryder.git
+git clone --recurse-submodules git@github.com:ramryder-project/ramryder.git
 ```
 
 If you already cloned the repository without `--recurse-submodules`, run:
@@ -246,5 +246,5 @@ Add CXL memory:
 This command kills the VM process and releases all resource-manager allocations.
 
 ## Update guest kernel
-After VM is ready, log into VM and then follow [RAMOS Get Started](/memx-ramos/build) to update guest kernel.
+After VM is ready, log into VM and then follow [RAMOS Get Started](/ramos/build) to update guest kernel.
 

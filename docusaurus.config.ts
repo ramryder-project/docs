@@ -2,13 +2,13 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'MemX',
-  tagline: 'Documentation hub for the MemX project family.',
-  favicon: 'img/memx-logo.svg',
-  url: 'https://memx-lab.github.io',
+  title: 'RamRyder',
+  tagline: 'Documentation hub for the RamRyder project family.',
+  favicon: 'img/ramryder-logo.svg',
+  url: 'https://ramryder-project.github.io',
   baseUrl: '/docs/',
 
-  organizationName: 'MemX',
+  organizationName: 'RamRyder',
   projectName: 'docs',
   trailingSlash: false,
 
@@ -38,17 +38,17 @@ const config: Config = {
 
   themeConfig: {
     navbar: {
-      title: 'MemX',
+      title: 'RamRyder',
       hideOnScroll: false,
       logo: {
-        alt: 'MemX',
-        src: 'img/memx-logo.svg',
-        href: 'https://memx-lab.github.io/',
+        alt: 'RamRyder',
+        src: 'img/ramryder-logo.svg',
+        href: 'https://ramryder-project.github.io/',
       },
       items: [
         {to: '/', label: 'Docs', position: 'left'},
         {
-          href: 'https://github.com/memx-lab',
+          href: 'https://github.com/ramryder-project',
           label: 'GitHub',
           position: 'left',
         },
@@ -67,18 +67,18 @@ const config: Config = {
         {
           title: 'Projects',
           items: [
-            {label: 'RamRyder', to: '/memx-ramryder/overview'},
-            {label: 'RAMOS', to: '/memx-ramos/overview'},
+            {label: 'RamRyder', to: '/ramryder/overview'},
+            {label: 'RAMOS', to: '/ramos/overview'},
           ],
         },
         {
           title: 'Community',
           items: [
-            {label: 'GitHub', href: 'https://github.com/memx-lab'},
+            {label: 'GitHub', href: 'https://github.com/ramryder-project'},
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} MemX Lab`,
+      copyright: `Copyright © ${new Date().getFullYear()} RamRyder Project`,
     },
     prism: {
       additionalLanguages: ['bash', 'toml', 'rust'],

@@ -5,12 +5,12 @@ title: Get Started
 # Get Started
 
 This page describes a simple workflow to prepare dependencies, configure the
-MemX RAMOS kernel, build it, and install it inside the guest image.
+RAMOS kernel, build it, and install it inside the guest image.
 
 ## Get source code
 
 ```bash
-git clone git@github.com:memx-lab/ramos.git
+git clone git@github.com:ramryder-project/ramos.git
 cd ramos
 ```
 
@@ -46,7 +46,7 @@ In `make menuconfig`, enable the following RAMOS options under `General setup`:
 
 Reference example:
 
-![MemX RAMOS kernel menuconfig example](/img/memx-ramos/kernel-config.png)
+![RAMOS kernel menuconfig example](/img/ramos/kernel-config.png)
 
 ## Build and install
 

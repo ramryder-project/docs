@@ -54,9 +54,9 @@ Relevant sections in the repository include:
 - [Using CXL Memory as System RAM](https://github.com/cxl-reskit/cxl-reskit)
 - [Converting Between Device DAX and System RAM Modes](https://github.com/cxl-reskit/cxl-reskit)
 
-## Guidance for MemX users
+## Guidance for RamRyder users
 
-When preparing CXL memory for MemX software, first verify how Linux currently
+When preparing CXL memory for RamRyder software, first verify how Linux currently
 enumerates the device. If the memory is already exposed as a DAX device, it can
 be integrated more directly into the software-managed workflow. If it appears
 only as system RAM, follow the `cxl-reskit` guidance to determine whether it

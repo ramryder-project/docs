@@ -34,7 +34,7 @@ For RamRyder-style software-defined memory management, Device DAX mode is often
 the more direct representation because the memory can be managed as an explicit
 device instead of being merged into general-purpose system RAM.
 
-## Recommended tooling
+## Recommended Tooling
 
 For detailed CXL provisioning, inspection, and DAX conversion steps, we
 recommend following the
@@ -54,7 +54,7 @@ Relevant sections in the repository include:
 - [Using CXL Memory as System RAM](https://github.com/cxl-reskit/cxl-reskit)
 - [Converting Between Device DAX and System RAM Modes](https://github.com/cxl-reskit/cxl-reskit)
 
-## Guidance for RamRyder users
+## Guidance for RamRyder Users
 
 When preparing CXL memory for RamRyder software, first verify how Linux currently
 enumerates the device. If the memory is already exposed as a DAX device, it can

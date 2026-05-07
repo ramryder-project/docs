@@ -1,13 +1,13 @@
 ---
-title: Get Started
+title: Kernel Installation
 ---
 
-# Get Started
+# Kernel Installation
 
 This page describes a simple workflow to prepare dependencies, configure the
 RAMOS kernel, build it, and install it inside the guest image.
 
-## Get source code
+## Get Source Code
 
 ```bash
 git clone git@github.com:ramryder-project/ramos.git
@@ -25,7 +25,7 @@ sudo apt-get update
 sudo apt-get install build-essential libncurses5 libncurses5-dev bin86 kernel-package libssl-dev bison flex libelf-dev dwarves
 ```
 
-## Configure kernel
+## Configure Kernel
 
 Start from the current system configuration:
 
@@ -40,7 +40,7 @@ Then open the configuration menu:
 make menuconfig
 ```
 
-In `make menuconfig`, enable the following RAMOS options under `General setup`:  
+In `make menuconfig`, enable the following RAMOS options under `General setup`:
 - `RAMOS NUMA abstraction support`
 - `RAMOS debug mode` (optional, for more verbose log output)
 
@@ -48,7 +48,7 @@ Reference example:
 
 ![RAMOS kernel menuconfig example](/img/ramos/kernel-config.png)
 
-## Build and install
+## Build and Install
 
 Use the following commands for a full kernel build and installation:
 
@@ -61,11 +61,11 @@ sudo make install
 
 Then reboot the VM and select new kernel `Linux 6.3.0-ramos+`.
 
-Note that `INSTALL_MOD_STRIP=1` removes debug symbols from kernel modules. This reduces
-build time and saves storage space, but you may want to keep debug symbols if
-you plan to use `gdb`.
+Note that `INSTALL_MOD_STRIP=1` removes debug symbols from kernel modules. This
+reduces build time and saves storage space, but you may want to keep debug
+symbols if you plan to use `gdb`.
 
-## Boot updates
+## Boot Updates
 
 These steps are optional because `make install` already handles the required
 boot updates in most cases. The commands below are kept here for reference in

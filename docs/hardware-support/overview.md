@@ -8,8 +8,6 @@ RamRyder currently supports multiple memory device types, including DIMM, PMem,
 and CXL memory devices. We also plan to support CXL pool memory and HBM in the
 future.
 
-## Why hardware-specific setup is needed
-
 Both RamRyder and RAMOS use a software-defined memory model. To let software manage memory at the channel level, each device type needs its own hardware-specific setup so
 that per-channel memory devices are exposed to the software layer.
 
@@ -17,7 +15,7 @@ Different device classes use different mechanisms, firmware models, BIOS
 requirements, and host enumeration paths. As a result, the setup steps are not
 identical across DIMM, PMem, and CXL memory.
 
-## Setup guides
+## Setup Guides
 
 Use the following guides for the corresponding hardware:
 

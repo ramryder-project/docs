@@ -15,18 +15,12 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'RamRyder',
+      label: 'Getting Started',
       items: [
-        'ramryder/overview',
-        'ramryder/build',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'RAMOS',
-      items: [
-        'ramos/overview',
-        'ramos/build',
+        'getting-started/overview',
+        'getting-started/resource-manager-setup',
+        'getting-started/virtual-machine-setup',
+        'getting-started/kernel-installation',
       ],
     },
     {

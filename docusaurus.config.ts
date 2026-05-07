@@ -56,29 +56,8 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {label: 'Overview', to: '/'},
-            {label: 'Hardware Support', to: '/hardware-support/overview'},
-          ],
-        },
-        {
-          title: 'Projects',
-          items: [
-            {label: 'RamRyder', to: '/ramryder/overview'},
-            {label: 'RAMOS', to: '/ramos/overview'},
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {label: 'GitHub', href: 'https://github.com/ramryder-project'},
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} RamRyder Project`,
+      links: [],
+      copyright: 'Copyright © 2026 RamRyder Project',
     },
     prism: {
       additionalLanguages: ['bash', 'toml', 'rust'],

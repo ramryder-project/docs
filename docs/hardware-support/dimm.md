@@ -21,7 +21,7 @@ The target setup is:
 This setup is intended for systems where memory placement and allocation are
 managed by software rather than by the default hardware interleaving policy.
 
-## Inspect the hardware topology
+## Inspect Hardware Topology
 
 DIMM topology can be detected through either `dmidecode` or `ipmctl`.
 
@@ -53,7 +53,7 @@ In this example, the server has a single socket (`CPU1`) with 12 memory
 channels (`A` through `L`). In each channel, only one slot is populated with a
 DDR5 DIMM.
 
-## Disable hardware-interleaving
+## Disable Hardware Interleaving
 
 To disable hardware interleaving, configure the memory subsystem in BIOS/UEFI.
 The exact options vary across hardware platforms and depend on the processor
@@ -65,7 +65,7 @@ is disabled by turning off `Memory Interleaving` and
 
 ![BIOS DIMM configuration example](/img/hardware-support/BIOS_DIMM_CONFIG.png)
 
-## Reserve memory regions per channel
+## Reserve Memory Regions
 
 ### 1. Calculate channel boundaries
 
@@ -134,7 +134,7 @@ sudo update-grub2
 
 Reboot the system after updating GRUB.
 
-## Configure memory as DAX devices
+## Configure Memory as DAX
 
 After reboot, check the current regions and namespaces:
 
@@ -152,7 +152,7 @@ sudo ndctl create-namespace -fe namespace1.0 --mode=devdax
 
 Repeat the same pattern for the remaining namespaces on your system.
 
-## Final verification
+## Final Verification
 
 After configuration, verify that the expected per-channel DAX devices are
 exposed to the host:

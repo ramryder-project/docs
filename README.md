@@ -9,18 +9,18 @@ For everyday documentation work, you will mainly edit Markdown files under
 
 - `docs/overview.md`
   Controls the docs homepage at `https://ramryder-project.github.io/docs/`
-- `docs/ramryder/overview.md`
-  Controls the `RamRyder` project overview page
-- `docs/ramryder/build.md`
-  Controls the `RamRyder` build/setup guide
+- `docs/getting-started/resource-manager-setup.md`
+  Controls the resource-manager setup guide
+- `docs/getting-started/virtual-machine-setup.md`
+  Controls the QEMU/VM management guide
+- `docs/getting-started/kernel-installation.md`
+  Controls the kernel install guide
+- `docs/getting-started/overview.md`
+  Controls the Getting Started overview and setup order
 - `docs/ramos/overview.md`
-  Controls the `RAMOS` project overview page
-- `docs/ramos/build.md`
-  Controls the `RAMOS` build/setup guide
+  Controls RAMOS kernel background details
 - `docs/community/overview.md`
   Controls the community page
-- `docs/roadmap.md`
-  Controls the roadmap page
 
 ### Site structure and appearance
 

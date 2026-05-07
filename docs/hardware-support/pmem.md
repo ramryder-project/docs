@@ -19,7 +19,7 @@ The target setup is:
 This setup is intended for systems where memory placement and allocation are
 managed by software rather than by the default hardware interleaving policy.
 
-## Inspect the hardware topology
+## Inspect Hardware Topology
 
 Install system tools:
 ```bash
@@ -73,10 +73,7 @@ Before changing the goal, confirm:
 - the current region `SocketID`, `ISetID`, and `PersistentMemoryType`
 - whether the platform supports an `AppDirectNotInterleaved` goal directly
 
-## Warning
-
-This procedure removes the current PMem namespace configuration and may erase
-existing PMem data.
+**Note that this procedure removes the current PMem namespace configuration and may erase existing PMem data.**
 
 ## Reconfigure PMem
 
@@ -116,7 +113,7 @@ Reboot the machine:
 sudo reboot
 ```
 
-## Verify the new layout
+## Verify New Layout
 
 After reboot, check whether the PMem configuration has been split into
 independent regions as expected:
@@ -125,7 +122,7 @@ independent regions as expected:
 ndctl list -RNu
 ```
 
-## Create namespaces per region
+## Create Namespaces
 
 Create a namespace for each region. For example:
 
@@ -138,7 +135,7 @@ sudo ndctl create-namespace --region=region2 --mode=devdax
 
 Repeat the same pattern for the remaining regions.
 
-## Final verification
+## Final Verification
 
 After configuration, verify that the expected DAX devices are exposed to the
 host:

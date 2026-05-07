@@ -1,13 +1,13 @@
 ---
-title: Get Started
+title: Resource Manager Setup
 ---
 
-# Get Started
+# Resource Manager Setup
 
-This page describes how to build RamRyder, configure the resource manager, and
-manage VMs with `ramryder_cli`.
+This page describes how to prepare source code, build RamRyder resource-manager
+components, configure memory devices, and start the resource manager.
 
-## Get source code
+## Get Source Code
 
 ```bash
 git clone --recurse-submodules git@github.com:ramryder-project/ramryder.git
@@ -19,11 +19,9 @@ If you already cloned the repository without `--recurse-submodules`, run:
 git submodule update --init --recursive
 ```
 
-## Build project
+## Build Resource Manager
 
 From the RamRyder directory:
-
-### Build resource manager
 
 ```bash
 ./scripts/pkgdep.sh
@@ -32,18 +30,7 @@ From the RamRyder directory:
 make
 ```
 
-### Build QEMU
-
-```bash
-cd qemu
-mkdir -p build
-cd build
-../configure --enable-kvm --target-list=x86_64-softmmu --enable-slirp
-make -j$(nproc)
-cd ../..
-```
-
-## Configure hardware resource
+## Configure Hardware Resource
 
 ### 1) Configure hardware
 
@@ -112,7 +99,7 @@ Section details:
     (deprecated).
   - `proxy_addr`: proxy address used when `use_proxy` is enabled (deprecated).
 
-## Start resource manager
+## Start Resource Manager
 
 ```bash
 cd src
@@ -120,131 +107,3 @@ sudo ./resource_manager
 ```
 
 `sudo` is required because resource manager reads host performance counters.
-
-## Get VM image
-
-We provide a clean Ubuntu VM image. You can use this image
-(**[download link](https://drive.google.com/file/d/1DASrFSRzh7dV2UX0fINgHhx10W13yZdz/view?usp=sharing)**)
-or use your own image.
-
-```bash
-tar -xf nvcloud-image-clean.tar.xz
-```
-
-Then refer to `readme.txt` inside the package for login information.
-
-## VM management
-
-All VM operations are managed by `admin/ramryder_cli`. You could use `ramryder_cli` to query resource allocations, allocate resources, and create VMs. 
-
-```bash
-cd /path/to/ramryder
-./admin/ramryder_cli --help
-```
-
-### 1) Query resource status
-
-Memory pool:
-
-```bash
-./admin/ramryder_cli query --type mempool
-```
-
-VM allocation status:
-
-```bash
-./admin/ramryder_cli query --type vm
-```
-
-### 2) Create VM
-
-Create a VM with local memory (DIMM):
-
-```bash
-./admin/ramryder_cli create-vm \
-  --cpu-set 0-9,20-29 \
-  --memory 150G \
-  --channels 6
-```
-
-Create a VM with DIMM + CXL memory:
-
-```bash
-./admin/ramryder_cli create-vm \
-  --cpu-set 0-9,20-29 \
-  --memory 100G \
-  --channels 4 \
-  --cxl-memory 50G \
-  --cxl-channels 2
-```
-
-Important behavior:
-- `--memory/--channels` are for local memory (DIMM, tier 0).
-- `--cxl-memory/--cxl-channels` are for CXL memory (tier 1).
-- memory size supports `M` or `G` units (for example `1024M`, `150G`).
-- default SSH forwarding port is `2806 + VMID`.
-- if that port is occupied, CLI chooses another available port.
-- vCPU pinning is enabled by default; disable with `--disable-vcpu-pin`.
-
-Dry-run example (execute RM allocation flow and auto cleanup without launching VM):
-
-```bash
-./admin/ramryder_cli create-vm \
-  --cpu-set 0-9,20-29 \
-  --memory 150G \
-  --channels 6 \
-  --dry-run
-```
-
-### 3) Dynamically add memory to a running VM
-
-Add DIMM memory from new channels:
-
-```bash
-./admin/ramryder_cli attach-mem \
-  --vmid 0 \
-  --memory 20G \
-  --channels 2
-```
-
-Add DIMM memory only from channels already allocated to this VM:
-
-```bash
-./admin/ramryder_cli attach-mem \
-  --vmid 0 \
-  --memory 10G \
-  --channels 0
-```
-
-Add CXL memory:
-
-```bash
-./admin/ramryder_cli attach-mem \
-  --vmid 0 \
-  --memory 0M \
-  --channels 0 \
-  --cxl-memory 20G \
-  --cxl-channels 1
-```
-
-`attach-mem` prints allocated `memid` values. Keep them for detach operations.
-
-### 4) Dynamically remove memory
-
-```bash
-./admin/ramryder_cli detach-mem --vmid 0 --memid 3
-```
-
-`memid` is numeric (`mem3 -> 3`).
-
-### 5) Destroy VM
-
-```bash
-./admin/ramryder_cli destroy-vm --vmid 0
-```
-
-This command kills the VM process and releases all resource-manager allocations.
-
-## Update guest kernel
-After VM is ready, log into VM and then follow [RAMOS Get Started](/ramos/build) to update guest kernel.
-
